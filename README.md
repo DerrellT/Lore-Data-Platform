@@ -34,6 +34,6 @@ LoreDataPlatform/
 │  ├─ api.py            # REST API endpoints
 │  └─ utils.py          # Helper functions (formatting, logging)
 ├─ tests/               # Unit and integration tests
-├─ requirements.txt     # Project dependencies
+├─ .gitignore           # Excludes venv/, __pycache__, etc.
 ├─ README.md
-└─ .gitignore           # Excludes venv/, __pycache__, etc.
+└─ requirements.txt     # Project dependencies
