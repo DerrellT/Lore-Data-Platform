@@ -29,9 +29,9 @@ The goal of this project is to demonstrate proficiency in:
 LoreDataPlatform/
 ├─ data/                # Example datasets (JSON/CSV)
 ├─ modules/             # Core project modules
+│  ├─ api.py            # REST API endpoints
 │  ├─ data_model.py     # Data ingestion, validation, storage
 │  ├─ services.py       # Query logic and business rules
-│  ├─ api.py            # REST API endpoints
 │  └─ utils.py          # Helper functions (formatting, logging)
 ├─ tests/               # Unit and integration tests
 ├─ .gitignore           # Excludes venv/, __pycache__, etc.
