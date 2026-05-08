@@ -36,4 +36,5 @@ LoreDataPlatform/
 ├─ tests/               # Unit and integration tests
 ├─ .gitignore           # Excludes venv/, __pycache__, etc.
 ├─ README.md
+├─ main.py
 └─ requirements.txt     # Project dependencies
