@@ -1,6 +1,13 @@
-{"characters":
-[{
-    "name": "Jicho"
-}
+{   
+    "characters":[
+        {
     
-]}
+            "name": "Jicho",
+            "traits": ["Happy"]
+        },
+        {
+            "name": "Amara",
+            "traits": ["Shy"]
+        }
+    ]
+}
