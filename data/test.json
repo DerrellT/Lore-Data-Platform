@@ -3,11 +3,16 @@
         {
     
             "name": "Jicho",
-            "traits": ["Happy"]
+            "traits": ["Happy"],
+            "region": "Rema",
+            "description": ["Humid", "Rainy"]
         },
         {
             "name": "Amara",
-            "traits": ["Shy"]
+            "traits": ["Shy"],
+            "region": "Rumo",
+            "descriptions": ["Hot", "Dry"]
+
         }
     ]
 }

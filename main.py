@@ -22,11 +22,16 @@ def search_characters(name, chars):
 #Formats and displays character information to the user.
 def display_character(character): 
     print(f"Name: {character.get('name')}")    
-    traits = character.get("traits", []) 
-    if traits:
+    data = character.get("traits", "region", []) 
+    if data:
         print("Traits: ")
-        for trait in traits:
-            print(f"- {trait}") 
+        for trait in data:
+            print(f"- {trait}")
+        print("Region: ")
+        for region in data:
+            print(f"- {region}")
+
+
 
 #Controls program flow: loads data, displays available characters, and handles user search loop.
 def main():
@@ -36,11 +41,15 @@ def main():
         return
     
     print("------Characters------ ") #helps user see then seperated sections
-    print("------'Quit' to exit program------ ") #helps user see then seperated sections
 
     for character in chars["characters"]: #goes through each character
         print(character.get("name")) #searches chars and gets each key value which is the names
 
+    print("------Regions-------- ")    
+    for character in chars["characters"]: #goes through each character
+        print(character.get("region")) #
+
+    print("------'Quit' to exit program------ ") #helps user see then seperated sections
 
     while True:
         found = False 
