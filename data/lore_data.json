@@ -4,15 +4,25 @@
     
             "name": "Jicho",
             "traits": ["Happy"],
-            "region": "Rema",
-            "description": ["Humid", "Rainy"]
+            "region": ["Rumo"]
         },
         {
             "name": "Amara",
             "traits": ["Shy"],
-            "region": "Rumo",
-            "descriptions": ["Hot", "Dry"]
+            "region": ["Rumo"]
 
         }
+    ],
+    "regions":[ 
+        {
+             "name": "Rema",
+            "description": ["Humid", "Rainy"]  
+        },
+        {
+            "name": "Rumo",
+            "description": ["Hot", "Dry"]
+        }
+
     ]
+
 }
