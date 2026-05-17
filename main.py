@@ -41,11 +41,19 @@ def display_character(character):
 
 def display_region(region): 
     print(f"Region: {region.get('name')}")    
-    datareg = region.get("description", []) 
+    datareg = region.get("description", [])
+    datap = region.get("people", [])
+
     if datareg:
         print("Description: ")
         for descr in datareg:
             print(f"- {descr}")
+    if datap: 
+        print("People: ")
+        for descr in datap:
+            print(f"- {descr}")
+
+        
 
 
 
