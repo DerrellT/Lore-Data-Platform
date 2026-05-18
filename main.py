@@ -13,17 +13,20 @@ def check_json_files():
         return None
 
 #Searches character dataset for a matching name and returns the character if found.
-def search_characters(name, lore_data):
+def search_lore(name, lore_data):
     for character in lore_data["characters"]:
         if character["name"].lower() == name:
-            return character 
-    return None
-
-def search_region(name, lore_data):
+            return character
     for region in lore_data["regions"]:
         if region["name"].lower() == name:
-            return region 
+            return region  
     return None
+
+#def search_region(name, lore_data):
+    #for region in lore_data["regions"]:
+        #if region["name"].lower() == name:
+            #return region 
+    #return None
 
 #Formats and displays character information to the user.
 def display_character(character): 
@@ -84,12 +87,12 @@ def main():
             print("Search ended")
             break #stops program breaks loop
 
-        result = search_characters(user_input, lore_data) #checks character data first if result is none goes to next function, passes chars
+        result = search_lore(user_input, lore_data) #checks character data first if result is none goes to next function, passes chars
         if result:
             found = True 
             display_character(result) #goes to next function
         
-        result = search_region(user_input, lore_data)
+        result = search_lore(user_input, lore_data)
         if result:
             found = True
             display_region(result)
