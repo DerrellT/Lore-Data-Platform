@@ -48,12 +48,7 @@ Python-based CLI project that loads and searches structured lore data from JSON 
 ```text
 LoreDataPlatform/
 ├─ data/            
-<<<<<<< HEAD
 ├─ lore_data.json  
-├─ README.md
-└─  main.py
-=======
-|  └─ lore_data.json  
 ├─ main.py
 └─ README.md 
->>>>>>> bc3673cf8c1360bdc7ae84d0becf044ed3e70775
+
