@@ -51,7 +51,3 @@ LoreDataPlatform/
 ├─ lore_data.json  
 ├─ main.py
 └─ README.md 
-<<<<<<< HEAD
-=======
-
->>>>>>> a7e314df781b27c306b16488b31adc3092f5e661
