@@ -1,25 +1,45 @@
 # Lore Data Platform
 
-An interactive Python-based data platform for exploring character, region, and vanguard data from JSON and database sources. This project demonstrates modular design, scalable backend architecture, and clean code practices suitable for a hireable-level SWE portfolio.
+Python-based CLI project that loads and searches structured lore data from JSON files, allowing users to explore linked characters and regions while practicing core backend and data modeling concepts.
 
 ---
 
 ## Project Overview
 
 **Lore Data Platform** allows users to:
+- Load structured JSON data
+- Search characters by name
+- Search regions by name
+- Show region associated with characters
+- Show characters associated with regions
+- Unified search function
+- Git version control for iterative development
 
-- Search and filter characters, regions, and vanguards
-- Query data via modular Python functions or API endpoints
-- Work with both JSON and SQL-based data sources
-- Easily extend functionality with new modules or datasets
+---
 
-The goal of this project is to demonstrate proficiency in:
+## Technologies used
 
-- Python programming and file I/O
-- Data structures and modular design
-- Backend architecture with RESTful API support
+- Python
+- JSON
+- Git
+- GitHub￼
+
+## Goals
+
+- Practice Python fundamentals and file I/O
+- Imporve data modeling
+- Learn backend design concepts
 - Data validation, error handling, and logging
+- Prepare for future API/database integration
 - Building maintainable and scalable systems
+
+---
+
+## Future roadmap 
+- migrate from JSON to SQL database
+- build REST API
+- add automated tests
+- improve modular package structure
 
 ---
 
@@ -27,14 +47,7 @@ The goal of this project is to demonstrate proficiency in:
 
 ```text
 LoreDataPlatform/
-├─ data/                # Example datasets (JSON/CSV)
-├─ modules/             # Core project modules
-│  ├─ api.py            # REST API endpoints
-│  ├─ data_model.py     # Data ingestion, validation, storage
-│  ├─ services.py       # Query logic and business rules
-│  └─ utils.py          # Helper functions (formatting, logging)
-├─ tests/               # Unit and integration tests
-├─ .gitignore           # Excludes venv/, __pycache__, etc.
+├─ data/            
+├─ lore_data.json  
 ├─ README.md
-├─ main.py
-└─ requirements.txt     # Project dependencies
+└─  main.py

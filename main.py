@@ -22,12 +22,6 @@ def search_lore(name, lore_data):
             return region  
     return None
 
-#def search_region(name, lore_data):
-    #for region in lore_data["regions"]:
-        #if region["name"].lower() == name:
-            #return region 
-    #return None
-
 #Formats and displays character information to the user.
 def display_character(character): 
     print(f"Name: {character.get('name')}")    
