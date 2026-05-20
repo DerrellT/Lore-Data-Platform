@@ -16,10 +16,10 @@ def check_json_files():
 def search_lore(name, lore_data):
     for character in lore_data["characters"]:
         if character["name"].lower() == name:
-            return character
+            return "Character", character
     for region in lore_data["regions"]:
         if region["name"].lower() == name:
-            return region  
+            return "Region", region  
     return None
 
 #Formats and displays character information to the user.
@@ -47,8 +47,8 @@ def display_region(region):
             print(f"- {descr}")
     if datap: 
         print("People: ")
-        for descr in datap:
-            print(f"- {descr}")
+        for ppl in datap:
+            print(f"- {ppl}")
 
         
 
@@ -82,14 +82,13 @@ def main():
             break #stops program breaks loop
 
         result = search_lore(user_input, lore_data) #checks character data first if result is none goes to next function, passes chars
-        if result:
+        result_type, result_data = result # Unpack search result into type label and data payload
+        if result_type == "Character":
             found = True 
-            display_character(result) #goes to next function
-        
-        result = search_lore(user_input, lore_data)
-        if result:
+            display_character(result_data)
+        elif result_type == "Region":
             found = True
-            display_region(result)
+            display_region(result_data)
 
         if not found: #prints below if found remains false
             print("Not Found.")
