@@ -50,18 +50,7 @@ def display_region(region):
         for ppl in datap:
             print(f"- {ppl}")
 
-        
-
-
-
-#Controls program flow: loads data, displays available characters, and handles user search loop.
-def main():
-    lore_data = check_json_files()
-    if lore_data is None:
-        print("Data missing. Check correct files. Exiting.")
-        return
-    
-    
+def display_world(lore_data):
     print("------Characters------ ") #helps user see then seperated sections
 
     for character in lore_data["characters"]: #goes through each character
@@ -72,27 +61,39 @@ def main():
         print(region.get("name")) #
 
     print("------'Quit' to exit program------ ") #helps user see then seperated sections
+    print("------'List' to see list of Characters and Regions again------ ") #helps user see then seperated sections
 
+
+
+
+
+#Controls program flow: loads data, displays available characters, and handles user search loop.
+def main():
+    lore_data = check_json_files()
+    if lore_data is None:
+        print("Data missing. Check correct files. Exiting.")
+        return
+    
     while True:
-        found = False 
+ 
         user_input = input("Enter a Character or Region: ").strip().lower() #moved lower here 
 
         if user_input == "quit": #added the choice to exit before searching through data
             print("Search ended")
-            break #stops program breaks loop
-
+            break
+        if user_input == "list": #added the choice to exit before searching through data
+           display_world(lore_data)
+           continue
         result = search_lore(user_input, lore_data) #checks character data first if result is none goes to next function, passes chars
+        if result == None: #checks if none is there before none is returned and crashes program
+            print("Not Found")
+            print("Try again.")
+            continue       
         result_type, result_data = result # Unpack search result into type label and data payload
         if result_type == "Character":
-            found = True 
             display_character(result_data)
         elif result_type == "Region":
-            found = True
             display_region(result_data)
-
-        if not found: #prints below if found remains false
-            print("Not Found.")
-            print("Try again.")
 
          
 
