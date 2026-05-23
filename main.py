@@ -60,11 +60,14 @@ def display_world(lore_data):
     for region in lore_data["regions"]: #goes through each character
         print(region.get("name")) #
 
-    print("------'Quit' to exit program------ ") #helps user see then seperated sections
-    print("------'List' to see list of Characters and Regions again------ ") #helps user see then seperated sections
 
+def display_help():
+    print("      Available commands:     ") #helps user see then seperated sections         
+    print("      quit   ") #helps user see then seperated sections
+    print("      'list' see Characters and Regions   ") #helps user see then seperated sections
+    print("      'help' show command list   ") #helps user see then seperated sections
 
-
+    
 
 
 #Controls program flow: loads data, displays available characters, and handles user search loop.
@@ -72,10 +75,10 @@ def main():
     lore_data = check_json_files()
     if lore_data is None:
         print("Data missing. Check correct files. Exiting.")
-        return
-    
+        return 
+    display_help()
     while True:
- 
+        
         user_input = input("Enter a Character or Region: ").strip().lower() #moved lower here 
 
         if user_input == "quit": #added the choice to exit before searching through data
@@ -84,8 +87,11 @@ def main():
         if user_input == "list": #added the choice to exit before searching through data
            display_world(lore_data)
            continue
+        if user_input == "help":
+            display_help()
+            continue
         result = search_lore(user_input, lore_data) #checks character data first if result is none goes to next function, passes chars
-        if result == None: #checks if none is there before none is returned and crashes program
+        if result is None: #checks if none is there before none is returned and crashes program
             print("Not Found")
             print("Try again.")
             continue       
