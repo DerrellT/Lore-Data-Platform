@@ -14,13 +14,14 @@ def check_json_files():
 
 #Searches character dataset for a matching name and returns the character if found.
 def search_lore(name, lore_data):
+    results = [] # created list to be added onto
     for character in lore_data["characters"]:
-        if character["name"].lower() == name:
-            return "Character", character
+        if name in character["name"].lower():
+            results.append(( "Character", character)) #goes through and adds all partial matches to a resutl list
     for region in lore_data["regions"]:
-        if region["name"].lower() == name:
-            return "Region", region  
-    return None
+        if name in region["name"].lower():
+            results.append(("Region", region))
+    return results #collects the list that has been made
 
 #Formats and displays character information to the user.
 def display_character(character): 
@@ -91,15 +92,15 @@ def main():
             display_help()
             continue
         result = search_lore(user_input, lore_data) #checks character data first if result is none goes to next function, passes chars
-        if result is None: #checks if none is there before none is returned and crashes program
+        if not result: #checks if results is empty
             print("Not Found")
             print("Try again.")
             continue       
-        result_type, result_data = result # Unpack search result into type label and data payload
-        if result_type == "Character":
-            display_character(result_data)
-        elif result_type == "Region":
-            display_region(result_data)
+        for results_type, result_data in result: #loops through result to return a list of things individually 
+            if results_type == "Character":
+                display_character(result_data)
+            elif results_type == "Region":
+                display_region(result_data)
 
          
 

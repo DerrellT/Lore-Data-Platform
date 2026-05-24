@@ -28,6 +28,12 @@
             "traits": ["Bubbly", "Optimistic"],
             "region": ["Yumtal"]
 
+        },
+                {
+            "name": "Hibana",
+            "traits": ["Fiery", "Brave"],
+            "region": ["Rema"]
+
         }
     
     ],
