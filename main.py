@@ -51,6 +51,16 @@ def display_region(region):
         for ppl in datap:
             print(f"- {ppl}")
 
+
+def display_search_results(result):
+    for index, (result_type, result_data) in enumerate(result): #loops through result to return a list of things individually 
+        print(index, result_type)
+        if result_type == "Character":
+            display_character(result_data)
+        elif result_type == "Region":
+            display_region(result_data)
+    
+    
 def display_world(lore_data):
     print("------Characters------ ") #helps user see then seperated sections
 
@@ -80,8 +90,11 @@ def main():
     display_help()
     while True:
         
-        user_input = input("Enter a Character or Region: ").strip().lower() #moved lower here 
-
+        user_input = input("Enter a Character or Region: ").strip().lower() 
+        if not user_input:
+            print("Not Found")
+            print("Try again.")
+            continue 
         if user_input == "quit": #added the choice to exit before searching through data
             print("Search ended")
             break
@@ -91,16 +104,15 @@ def main():
         if user_input == "help":
             display_help()
             continue
+           
         result = search_lore(user_input, lore_data) #checks character data first if result is none goes to next function, passes chars
         if not result: #checks if results is empty
             print("Not Found")
             print("Try again.")
-            continue       
-        for results_type, result_data in result: #loops through result to return a list of things individually 
-            if results_type == "Character":
-                display_character(result_data)
-            elif results_type == "Region":
-                display_region(result_data)
+            continue
+        display_search_results(result)       
+
+        
 
          
 

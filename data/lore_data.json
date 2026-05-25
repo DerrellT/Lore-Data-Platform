@@ -34,7 +34,26 @@
             "traits": ["Fiery", "Brave"],
             "region": ["Rema"]
 
+        },
+                {
+            "name": "Sett",
+            "traits": ["Fighter"],
+            "region": ["Candros"]
+
+        },
+                {
+            "name": "Octavia",
+            "traits": [],
+            "region": ["Rema"]
+
+        },
+                {
+            "name": "Wisp",
+            "traits": [],
+            "region": []
+
         }
+        
     
     ],
     "regions":[ 
